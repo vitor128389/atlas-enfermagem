@@ -7,7 +7,7 @@
 :root{--cream:#fafbfb;--navy:#0f2a35;--teal:#0f4c5c;--red:#ea580c;--yel:#ffc928;--green:#e4f3e1;--blue:#e3eefb;--pink:#fde5ea;--lav:#eee6f8;--orange:#fdebd9}
 *{box-sizing:border-box}body{margin:0;font-family:Outfit,sans-serif;background-color:var(--cream);background-image:linear-gradient(rgba(15,76,92,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(15,76,92,.06) 1px,transparent 1px);background-size:34px 34px;color:var(--navy);line-height:1.5}
 img{max-width:100%;display:block}a{color:inherit}
-.top{position:sticky;top:0;z-index:40;background:#d9420b;color:#fff;text-align:center;padding:10px 14px;font-weight:800;font-size:14px}.top b{background:#fff;color:#d9420b;border-radius:6px;padding:2px 8px;margin-left:6px;font-variant-numeric:tabular-nums}
+.promo{text-align:center;font-weight:800;font-size:15px;color:#d9420b;margin:0 0 18px;white-space:nowrap}.promo b{background:#d9420b;color:#fff;border-radius:6px;padding:2px 8px;margin-left:4px;font-variant-numeric:tabular-nums}@media(max-width:420px){.promo{font-size:12.5px}}.top{position:sticky;top:0;z-index:40;background:#d9420b;color:#fff;text-align:center;padding:10px 14px;font-weight:800;font-size:14px}.top b{background:#fff;color:#d9420b;border-radius:6px;padding:2px 8px;margin-left:6px;font-variant-numeric:tabular-nums}
 .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
 section{padding:56px 0}
 h1,h2{font-family:'Plus Jakarta Sans',Outfit,sans-serif;font-weight:800;line-height:1.1;margin:0 0 14px}
@@ -114,7 +114,7 @@ footer{background:var(--navy);color:#dbe6ef;text-align:center;padding:36px 20px;
 <div class="econ"><small>ECONOMIA TOTAL GARANTIDA</small><div><s>R$ 238,00</s> → <b>GRÁTIS</b></div><small>Leve os 4 guias bônus sem pagar um centavo a mais.</small></div></div></section>
 <!--TESTIMONIALS_SLOT
 <section id="depoimentos"> adicione aqui apenas depoimentos reais de clientes </section>-->
-<section id="pricing"><div class="wrap"><h2>Escolha seu plano</h2><div class="plans">
+<section id="pricing"><div class="wrap"><h2>Escolha seu plano</h2><p class="promo">🔥 Valor promocional válido apenas até hoje · termina em <b id="cd2">--:--:--</b></p><div class="plans">
 <div class="plan"><span class="badge" style="align-self:flex-start">Pacote inicial</span><h3>Plano Básico</h3><div class="price">R$ 10 <small>pagamento único</small></div>
 <ul><li>Mapas mentais selecionados</li><li>Formato PDF</li><li>Suporte por e-mail</li><li>Sem bônus</li></ul>
 <a class="btn alt" href="https://pay.wiapy.com/6b05995bf3f790ea292127e0" data-plan="basico">Quero apenas o Pacote Inicial →</a></div>
@@ -153,6 +153,6 @@ if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add(
 var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
 els.forEach(function(e){io.observe(e)});
 function tick(){var n=new Date(),m=new Date(n);m.setHours(24,0,0,0);var s=Math.floor((m-n)/1000),p=function(v){return String(v).padStart(2,'0')};
-document.getElementById('cd').textContent=p(Math.floor(s/3600))+':'+p(Math.floor(s%3600/60))+':'+p(s%60)}
+var t=p(Math.floor(s/3600))+':'+p(Math.floor(s%3600/60))+':'+p(s%60);document.getElementById('cd').textContent=t;var c2=document.getElementById('cd2');if(c2)c2.textContent=t}
 tick();setInterval(tick,1000)})();
 </script></body></html>
